@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 16px;
+  transition: background-color 0.4s ease-in;
+}
+
+.container {
+  width: 350px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: background-color 0.4s ease-in;
+}
+
+.container.active {
+  background-color: rgb(34, 34, 34);
+}
+
+.header {
+  background-color: rgb(106, 90, 205);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0 10px 10px 0px;
+}
+
+.subtitle {
+  opacity: 0.8;
+  display: inline-block;
+  margin: 0 5px 5px 0px;
+}
+
+.input {
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  background-color: #c0b7f7;
+  color: black;
+  transition: background-color 0.4s ease-in, color 0.4s ease-in;
+}
+
+.input.active {
+  background-color: #4f4399;
+  color: white;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.user-list {
+  /* background-color: aliceblue; */
+  list-style-type: none;
+  max-height: 500px;
+  overflow-y: scroll;
+  transition: color 0.4s ease-in;
+}
+
+.user-list img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+  padding: 10px 0;
+}
+
+.user-list.active {
+  color: aliceblue;
+}
+
+.user-list li:not(:first-of-type) {
+  border-top: 1px solid lightgray;
+}
+
+.user-list.active li:not(:first-of-type) {
+  border-top: 1px solid rgb(73, 73, 73);
+}
+
+.user-list h4 {
+  margin-left: 10px;
+}
+
+.user-list p {
+  margin-left: 10px;
+}
+
+.user-list li.hide {
+  display: none;
+}
+
+/*dark mode */
+
+.toggler {
+  position: absolute;
+  right: 20px;
+}
+
+.label {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: aliceblue;
+  border-radius: 50px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.label .circle {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1px;
+  transition: 0.4s left ease-in-out;
+}
+
+.toggle-mode {
+  display: none;
+}
+
+.toggle-mode:checked + .label {
+  background-color: rgb(37, 37, 37);
+}
+
+.toggle-mode:checked + .label .circle {
+  background-color: aliceblue;
+  left: 21px;
+}

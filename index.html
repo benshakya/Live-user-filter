@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live User Search</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h4 class="title">Live User Filter</h4>
+        <div class="toggler">
+          <input type="checkbox" class="toggle-mode" id="toggle-mode" />
+          <label for="toggle-mode" class="label">
+            <div class="circle"></div>
+          </label>
+        </div>
+
+        <small class="subtitle">Search by name and/or location</small>
+        <input type="text" class="input" id="filter" placeholder="Search" />
+      </header>
+
+      <ul class="user-list" id="result">
+        <li>
+          <div class="loading">
+            <h4>Loading...</h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
